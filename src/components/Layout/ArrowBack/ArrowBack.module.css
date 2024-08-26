@@ -1,0 +1,26 @@
+.iconArrow{
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 80px;
+  left: 0px;
+  z-index: 100;
+  background-color: rgba(240, 255, 255, .9);
+}
+
+.iconArrow svg, .iconArrow path{
+  color: gray;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.iconArrow h1{
+  margin-left: 10px;
+  color: gray;
+  font-size: 20px;
+  text-transform: inherit;
+}

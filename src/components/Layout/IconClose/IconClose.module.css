@@ -1,0 +1,27 @@
+.iconClose{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.iconClose svg, .iconClose path{
+  font-size: 26px;
+  color: var(--clrBL0);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.iconClose:hover,.iconClosehover{
+  background-color: var(--clrGR0);
+}
+
+.iconClose:active,.iconClose:active{
+  background-color: var(--clrGR1);
+}

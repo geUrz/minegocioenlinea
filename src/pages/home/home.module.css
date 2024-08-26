@@ -1,0 +1,62 @@
+.containerHome{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .containerHomebanner{
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .bannerPc{
+    display: none;
+  }
+  
+  .sectionOne{
+    padding: 80px 10px 30px 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sectionOne h1{
+    color: var(--clrBL2);
+    font-size: 30px;
+    font-family: 'Bebas' !important;
+  }
+  
+  .sectionOne svg, .sectionOne path{
+    margin-right: 10px;
+    font-size: 30px;
+    color: var(--clrBL2);
+  }
+  
+  
+  @media screen and (min-width: 600px){
+  
+    .bannerMobile{
+      display: none;
+    }
+  
+    .bannerPc{
+      width: 100%;
+      height: auto;
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .bannerPc img{
+      width: 100%;
+      height: auto;
+    }
+  
+  }

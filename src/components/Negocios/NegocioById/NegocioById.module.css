@@ -1,0 +1,171 @@
+.noShop{
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noShop svg, .noShop path{
+  font-size: 60px;
+  color: gray;
+}
+
+.noShop h1{
+  margin-top: 5px;
+  font-size: 14px;
+  color: gray;
+}
+
+.noShop a{
+  cursor: pointer;
+}
+
+.main{
+  padding: 0 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.img{
+  padding: 20px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img svg, .img path{
+  font-size: 80px !important;
+  color: var(--clrGR0);
+}
+
+.main h1{
+  font-size: 18px;
+  color: var(--clrBL0);
+}
+
+.main p{
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: justify;
+  color: var(--clrGR0);
+}
+
+.main div{
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main div svg, .main div path{
+  margin-right: 5px;
+  font-size: 18px;
+  color: var(--clrGR0);
+}
+
+.main h2{
+  font-size: 14px;
+  color: black;
+}
+
+.main a{
+  margin-left: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.iconEditTrash{
+  padding: 30px;
+  width: 100%;
+  height: auto;
+}
+
+.iconEditTrash div svg, .iconEditTrash div path{
+  margin: 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+} 
+
+.iconEditTrash div:nth-child(1) svg, .iconEditTrash div:nth-child(1) path{
+  color: var(--clrBL0);
+} 
+
+.iconEditTrash div:nth-child(1):hover svg, .iconEditTrash div:nth-child(1):hover path{
+  color: var(--clrBL1);
+} 
+
+.iconEditTrash div:nth-child(1):active svg, .iconEditTrash div:nth-child(1):active path{
+  color: var(--clrBL2);
+} 
+
+.iconEditTrash div:nth-child(2) svg, .iconEditTrash div:nth-child(2) path{
+  color: red;
+} 
+
+.iconEditTrash div:nth-child(2):hover svg, .iconEditTrash div:nth-child(2):hover path{
+  color: rgb(255, 78, 78);
+} 
+
+.iconEditTrash div:nth-child(2):active svg, .iconEditTrash div:nth-child(2):active path{
+  color: rgb(255, 98, 98);
+} 
+
+.iconClose{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.iconClose:hover{
+  background-color: var(--clrGR0);
+}
+
+.iconClose:active{
+  background-color: var(--clrGR1);
+}
+
+.iconClose svg, .iconClose path{
+  font-size: 18px;
+  color: var(--clrBL0);
+  cursor: pointer;
+}
+
+.iconCheck{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--clrGR0);
+}
+
+.iconCheck:active{
+  background-color: var(--clrGR1);
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 24px;
+  color: var(--clrBL2);
+  cursor: pointer;
+}
+

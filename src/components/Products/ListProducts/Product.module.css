@@ -1,0 +1,38 @@
+.boxProduct{
+  padding: 20px 0;
+  margin-bottom: 50px;
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.boxProduct:hover{
+  background-color: var(--background1);
+}
+
+.boxImg{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.boxImg img{
+  height: 120px;
+  cursor: pointer;
+}
+
+.boxProduct h1{
+  margin-top: 15px;
+  color: goldenrod;
+  font-size: 14px;
+  font-weight: 200 !important;
+  text-transform: capitalize;
+  cursor: pointer;
+}
