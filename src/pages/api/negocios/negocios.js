@@ -1,5 +1,30 @@
 import connection from "@/libs/db"
 
+import axios from "axios";
+
+const ONE_SIGNAL_APP_ID = process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID;
+const ONE_SIGNAL_API_KEY = process.env.NEXT_PUBLIC_ONESIGNAL_API_KEY;
+
+// Función para enviar notificación
+async function sendNotification(message) {
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${ONE_SIGNAL_API_KEY}`,
+  };
+
+  const data = {
+    app_id: ONE_SIGNAL_APP_ID,
+    included_segments: ['All'],  
+    contents: { en: message },
+  };
+
+  try {
+    await axios.post('https://onesignal.com/api/v1/notifications', data, { headers });
+  } catch (error) {
+    console.error('Error sending notification:', error.message);
+  }
+}
+
 export default async function handler(req, res) {
     const { id, usuario_id, best } = req.query;
 
@@ -42,9 +67,14 @@ export default async function handler(req, res) {
             if (!usuario_id || !negocio || !categoriaone) {
                 return res.status(400).json({ error: 'Todos los datos son obligatorios' });
             }
-            const [result] = await connection.query('INSERT INTO negocios (usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best]);
-            const newClient = { id: result.insertId };
-            res.status(201).json(newClient);
+            const [result] = await connection.query('INSERT INTO negocios (usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best])
+
+            // Enviar notificación después de crear la nota
+            const message = `Se ha creado un nuevo negocio: ${negocio}.`
+            await sendNotification(message)
+
+            const newClient = { id: result.insertId }
+            res.status(201).json(newClient)
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
