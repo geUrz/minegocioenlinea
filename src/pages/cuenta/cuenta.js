@@ -4,8 +4,8 @@ import { FaEdit, FaUser } from 'react-icons/fa'
 import { ModUsuarioForm } from '@/components/Cuenta'
 import { useState } from 'react'
 import { Loading, Title, ToastDelete, ToastSuccess } from '@/components/Layout'
-import { useAuth } from '@/contexts/AuthContext'
 import { NegocioById } from '@/components/Negocios'
+import { useAuth } from '@/contexts/AuthContext'
 import styles from './cuenta.module.css'
 
 export default function Cuenta() {
