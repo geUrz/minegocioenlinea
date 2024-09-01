@@ -12,6 +12,7 @@ export function NegocioRegistroForm(props) {
   const router = useRouter()
 
   const [negocio, setNegocio] = useState('')
+  const [slug, setSlug] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [categoriaone, setCategoriaone] = useState('')
   const [categoriatwo, setCategoriatwo] = useState('')
@@ -45,6 +46,22 @@ export function NegocioRegistroForm(props) {
     
   }
 
+  // Función para generar el slug
+  const generateSlug = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')  // Elimina caracteres especiales
+      .replace(/\s+/g, '-')          // Reemplaza espacios con guiones
+      .trim()
+  }
+
+  // Actualizar el valor del slug cada vez que cambia el nombre del negocio
+  const handleNegocioChange = (e) => {
+    const value = e.target.value
+    setNegocio(value)
+    setSlug(generateSlug(value))
+  }
+
   const crearNegocio = async (e) => {
 
     e.preventDefault()
@@ -56,6 +73,7 @@ export function NegocioRegistroForm(props) {
     try {
       await axios.post('/api/negocios/negocios',{
         negocio,
+        slug,
         descripcion,
         categoriaone,
         categoriatwo,
@@ -71,6 +89,7 @@ export function NegocioRegistroForm(props) {
       })
 
       setNegocio('')
+      setSlug('')
       setDescripcion('')
       setCategoriaone('')
       setCategoriatwo('')
@@ -114,7 +133,7 @@ export function NegocioRegistroForm(props) {
                 type="text"
                 placeholder='Nombre de tu negocio'
                 value={negocio}
-                onChange={(e) => setNegocio(e.target.value)}
+                onChange={handleNegocioChange}
               />
               {errors.negocio && <span className={styles.error}>{errors.negocio}</span>}
             </FormField>
@@ -152,18 +171,20 @@ export function NegocioRegistroForm(props) {
                 onChange={(e) => setCategoriaone(e.target.value)}
               >
                 <option value=''>-- Seleccionar categoría --</option>
-                <option value='Alimentos'>Alimentos</option>
-                <option value='Belleza'>Belleza</option>
-                <option value='Bienesraices'>Bienes Raíces</option>
-                <option value='EscuelasyCursos'>Escuelas y Cursos</option>
-                <option value='GruposyMusica'>Grupos y Música</option>
-                <option value='Mascotas'>Mascotas</option>
-                <option value='Rentas'>Rentas</option>
-                <option value='SalonesyJardines'>Salones y Jardines</option>
-                <option value='Salud'>Salud</option>
-                <option value='ServiciosProfesionales'>Servicios Profesionales</option>
-                <option value='ServiciosTecnicos'>Servicios Técnicos</option>
-                <option value='Tecnologia'>Tecnología</option>
+                <option value='alimentos'>Alimentos</option>
+                <option value='belleza'>Belleza</option>
+                <option value='bienes-raíces'>Bienes Raíces</option>
+                <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
+                <option value='grupos-y-música'>Grupos y Música</option>
+                <option value='mascotas'>Mascotas</option>
+                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='rentas'>Rentas</option>
+                <option value='salones-y-jardines'>Salones y Jardines</option>
+                <option value='salud'>Salud</option>
+                <option value='servicios-profesionales'>Servicios Profesionales</option>
+                <option value='servicios-técnicos'>Servicios Técnicos</option>
+                <option value='tecnología'>Tecnología</option>
+                <option value='ventasvarias'>Ventas varias</option>
               </FormField>
               {errors.categoriaone && <span className={styles.error}>{errors.categoriaone}</span>}
             </FormField>
@@ -179,18 +200,20 @@ export function NegocioRegistroForm(props) {
                 onChange={(e) => setCategoriatwo(e.target.value)}
               >
                 <option value=''>-- Seleccionar categoría --</option>
-                <option value='Alimentos'>Alimentos</option>
-                <option value='Belleza'>Belleza</option>
-                <option value='Bienesraices'>Bienes Raíces</option>
-                <option value='EscuelasyCursos'>Escuelas y Cursos</option>
-                <option value='GruposyMusica'>Grupos y Música</option>
-                <option value='Mascotas'>Mascotas</option>
-                <option value='Rentas'>Rentas</option>
-                <option value='SalonesyJardines'>Salones y Jardines</option>
-                <option value='Salud'>Salud</option>
-                <option value='ServiciosProfesionales'>Servicios Profesionales</option>
-                <option value='ServiciosTecnicos'>Servicios Técnicos</option>
-                <option value='Tecnologia'>Tecnología</option>
+                <option value='alimentos'>Alimentos</option>
+                <option value='belleza'>Belleza</option>
+                <option value='bienes-raíces'>Bienes Raíces</option>
+                <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
+                <option value='grupos-y-música'>Grupos y Música</option>
+                <option value='mascotas'>Mascotas</option>
+                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='rentas'>Rentas</option>
+                <option value='salones-y-jardines'>Salones y Jardines</option>
+                <option value='salud'>Salud</option>
+                <option value='servicios-profesionales'>Servicios Profesionales</option>
+                <option value='servicios-técnicos'>Servicios Técnicos</option>
+                <option value='tecnología'>Tecnología</option>
+                <option value='ventasvarias'>Ventas varias</option>
               </FormField>
             </FormField>
             <FormField>

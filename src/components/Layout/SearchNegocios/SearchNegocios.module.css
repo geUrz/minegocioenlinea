@@ -1,0 +1,64 @@
+.main{
+  padding: 5px 0 20px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(240, 255, 255, .95);
+}
+
+.searchInput{
+  width: 100% !important;
+  height: auto !important;
+}
+
+.input{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input input{
+  width: 350px !important;
+  border-radius: 5px !important;
+  border: 1px solid var(--clrBL2) !important;
+  background-color: rgba(240, 255, 255, .95) !important;
+}
+
+.iconSearch{
+  margin-left: 10px;
+  position: relative;
+  cursor: pointer;
+} 
+
+.iconSearch svg, .iconSearch path{
+  font-size: 28px;
+  color: var(--clrBL0);
+  cursor: pointer;
+} 
+
+.iconSearch svg:hover, .iconSearch:hover path{
+  color: var(--clrBL1);
+}
+
+.iconSearch svg:active, .iconSearch:active path{
+  color: var(--clrBL2);
+}
+
+.negocioLista{
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: azure;
+}
+
+@media screen and (min-width: 768px) {
+
+
+
+}

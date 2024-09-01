@@ -3,11 +3,18 @@ import { Image } from "semantic-ui-react"
 import { NegociosTodos, NegociosBest } from "@/components/Negocios"
 import { PublicarNegocio } from "@/components/Home"
 import styles from './home.module.css'
-import { FaMedal, FaStore } from "react-icons/fa"
+import { FaCloudUploadAlt, FaMedal, FaStore, FaStoreAlt } from "react-icons/fa"
 import { ToastSuccess } from "@/components/Layout"
-import { useState } from "react"
+import { useRouter } from "next/router"
+
 
 export default function Home() {
+
+  const router = useRouter()
+
+  const userOn = () => {
+    router.push('/registro')
+  } 
 
   return (
     <BasicLayout relative>
@@ -17,13 +24,27 @@ export default function Home() {
         <div className={styles.containerHomebanner}>
           <div className={styles.bannerMobile}>
             <Image src='/img/wallpaperMobil.webp' />
+            <div className={styles.container}
+              onClick={userOn}
+            >
+              <h2>¿ Tu negocio no esta en línea ?</h2>
+              <h1>¡ Publícalo aquí !</h1>
+              <FaCloudUploadAlt />
+            </div>
           </div>
           <div className={styles.bannerPc}>
             <Image src='/img/wallpaperPC.webp' />
+            <div className={styles.container}
+              onClick={userOn}
+            >
+              <h2>¿ Tu negocio no esta en línea ?</h2>
+              <h1>¡ Publícalo aquí !</h1>
+              <div>
+                <FaCloudUploadAlt />
+              </div>
+            </div>
           </div>
         </div>
-
-        <PublicarNegocio />
 
         <div className={styles.sectionOne}>
           <FaMedal />
@@ -33,7 +54,7 @@ export default function Home() {
         <NegociosBest />
 
         <div className={styles.sectionOne}>
-          <FaStore />
+          <FaStoreAlt />
           <h1>Nuevos negocios</h1>
         </div>
 

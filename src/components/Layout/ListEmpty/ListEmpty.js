@@ -1,12 +1,21 @@
-import { FaListAlt, FaNotEqual, FaNotesMedical, FaRegStickyNote, FaTimesCircle } from 'react-icons/fa'
+import { FaStoreAlt, FaTimesCircle } from 'react-icons/fa'
 import styles from './ListEmpty.module.css'
+import classNames from 'classnames'
 
-export function ListEmpty() {
+export function ListEmpty(props) {
+
+  const {listEmpty} = props
+
+  const listEmptyClass = classNames({
+    [styles.listEmptyMain]: listEmpty === 0,
+    [styles.listEmptyLarge]: listEmpty === 1
+  })
+
   return (
 
-    <div className={styles.section}>
+    <div className={listEmptyClass}>
       <div>
-        <FaListAlt />
+        <FaStoreAlt />
         <FaTimesCircle />
       </div>
     </div>

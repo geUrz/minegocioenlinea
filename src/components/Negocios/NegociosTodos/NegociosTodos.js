@@ -5,7 +5,7 @@ import styles from './NegociosTodos.module.css'
 import axios from "axios"
 import Link from "next/link"
 import { Image } from "semantic-ui-react"
-import { FaRegImage } from "react-icons/fa"
+import { FaStoreAlt } from "react-icons/fa"
 
 export function NegociosTodos(props) {
 
@@ -29,7 +29,7 @@ export function NegociosTodos(props) {
     <>
 
       {!negocios ? (
-        <Loading />
+        <Loading size={45} loading={2} />
       ) :
         size(negocios) === 0 ? (
           <ListEmpty />
@@ -38,15 +38,15 @@ export function NegociosTodos(props) {
           <div className={styles.boxMain}>
 
             {map(negocios, (negocio) => (
-              <div key={negocio.id} className={styles.boxSection}>
+              <Link href={`/negocio/${negocio.slug}`} key={negocio.id} className={styles.boxSection}>
 
                 <div className={styles.box}>
-                  {true ? (
+                  {!negocio.image ? (
                     <div className={styles.noImage}>
-                      <FaRegImage />
+                      <FaStoreAlt />
                     </div>
                     ) : (
-                      ''
+                      <Image src={negocio.image} />
                     )
                   }
                   <div className={styles.boxSelec}></div>
@@ -55,7 +55,7 @@ export function NegociosTodos(props) {
                   <h1>{negocio.negocio}</h1> 
                 </div>
 
-              </div>
+              </Link>
             ))}
 
           </div>

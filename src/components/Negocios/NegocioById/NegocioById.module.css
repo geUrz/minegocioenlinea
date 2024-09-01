@@ -24,12 +24,20 @@
 }
 
 .main{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section{
   padding: 0 10px;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start !important;
   justify-content: center;
 }
 
@@ -42,9 +50,22 @@
   justify-content: center;
 }
 
+.img img{
+  width: auto;
+  height: 150px;
+}
+
 .img svg, .img path{
   font-size: 80px !important;
   color: var(--clrGR0);
+}
+
+.editImg{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
 }
 
 .main h1{
@@ -69,7 +90,7 @@
 .main div svg, .main div path{
   margin-right: 5px;
   font-size: 18px;
-  color: var(--clrGR0);
+  color: var(--clrBL1);
 }
 
 .main h2{
@@ -87,36 +108,23 @@
   padding: 30px;
   width: 100%;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.iconEditTrash div svg, .iconEditTrash div path{
-  margin: 0 10px;
-  font-size: 24px;
-  cursor: pointer;
+.iconEditTrash div svg, .iconEditTrash div path, .editImg svg, .editImg path{
+  font-size: 20px !important;
+  color: red !important;
+  cursor: pointer !important;
+}  
+
+.iconEditTrash div:hover svg, .iconEditTrash div:hover path, .editImg:hover svg, .editImg:hover path{
+  color: rgb(255, 78, 78) !important;
 } 
 
-.iconEditTrash div:nth-child(1) svg, .iconEditTrash div:nth-child(1) path{
-  color: var(--clrBL0);
-} 
-
-.iconEditTrash div:nth-child(1):hover svg, .iconEditTrash div:nth-child(1):hover path{
-  color: var(--clrBL1);
-} 
-
-.iconEditTrash div:nth-child(1):active svg, .iconEditTrash div:nth-child(1):active path{
-  color: var(--clrBL2);
-} 
-
-.iconEditTrash div:nth-child(2) svg, .iconEditTrash div:nth-child(2) path{
-  color: red;
-} 
-
-.iconEditTrash div:nth-child(2):hover svg, .iconEditTrash div:nth-child(2):hover path{
-  color: rgb(255, 78, 78);
-} 
-
-.iconEditTrash div:nth-child(2):active svg, .iconEditTrash div:nth-child(2):active path{
-  color: rgb(255, 98, 98);
+.iconEditTrash div:active svg, .iconEditTrash div:active path, .editImg:active svg, .editImg:active path{
+  color: rgb(255, 98, 98) !important;
 } 
 
 .iconClose{
@@ -169,3 +177,10 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 768px){
+
+  .section{
+    max-width: 720px;
+  }
+
+}

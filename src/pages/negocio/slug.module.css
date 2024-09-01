@@ -1,0 +1,105 @@
+.noShop{
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noShop svg, .noShop path{
+  font-size: 60px;
+  color: gray;
+}
+
+.noShop h1{
+  margin-top: 5px;
+  font-size: 14px;
+  color: gray;
+}
+
+.noShop a{
+  cursor: pointer;
+}
+
+.main{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section{
+  padding: 0 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: center;
+}
+
+.img{
+  padding: 20px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img img{
+  height: 150px;
+}
+
+.img svg, .img path{
+  font-size: 80px !important;
+  color: var(--clrGR0);
+}
+
+.main h1{
+  font-size: 18px;
+  color: var(--clrBL0);
+}
+
+.main p{
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: justify;
+  color: var(--clrGR0);
+}
+
+.main div{
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main div svg, .main div path{
+  margin-right: 5px;
+  font-size: 18px;
+  color: var(--clrBL1);
+}
+
+.main h2{
+  font-size: 14px;
+  color: black;
+}
+
+.main a{
+  margin-left: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px){
+
+  .section{
+    max-width: 720px;
+  }
+
+}
+

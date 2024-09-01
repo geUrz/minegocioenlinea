@@ -1,0 +1,88 @@
+.boxMain{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: azure;
+  z-index: 1;
+}
+
+.boxSection{
+  margin: 10px 5px;
+  width: 150px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.box{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.boxSelec{
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: rgba(0, 163, 192, .5);
+  cursor: pointer;
+}
+
+.boxSection:hover .boxSelec{
+  transform: translate(100%);
+}
+
+.noImage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.noImage svg, .noImage path{
+  color: azure;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.title{
+  padding: 0 2px;
+  margin-top: 4px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.title h1{
+  font-size: 14px;
+  color: black;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px){
+
+  .boxMain{
+    padding: 30px;
+  }
+
+}

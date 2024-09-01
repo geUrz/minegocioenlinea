@@ -1,0 +1,47 @@
+.title{
+  padding: 30px 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1{
+  font-size: 24px;
+  text-align: center;
+  color: var(--clrBL0);
+}
+
+.textArea textarea{
+  width: 350px !important;
+  height: 150px;
+}
+
+.error{
+  margin-top: 5px;
+  font-size: 11.5px;
+  color: red;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+  .title{
+    padding: 50px 10px;
+  }
+
+}
+
+@media screen and (min-width: 1024px){
+
+  .main{
+    padding: 50px 0 30px 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .title{
+    padding: 80 10px 50px 10px;
+  }
+
+}

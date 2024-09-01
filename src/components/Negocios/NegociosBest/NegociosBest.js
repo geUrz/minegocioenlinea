@@ -25,7 +25,7 @@ export function NegociosBest() {
     <>
 
       {!negocios ? (
-        <Loading size={45} loading={1} />
+        <Loading size={45} loading={2} />
       ) : (
         size(negocios) === 0 ? (
           <ListEmpty />
@@ -36,13 +36,13 @@ export function NegociosBest() {
               <div key={negocio.id} className={styles.boxSection}>
 
                 <div className={styles.box}>
-                  {true ? (
+                {!negocio.image ? (
                     <div className={styles.noImage}>
-                      <FaRegImage />
+                      <FaStoreAlt />
                     </div>
-                  ) : (
-                    ''
-                  )
+                    ) : (
+                      <Image src={negocio.image} />
+                    )
                   }
                   <div className={styles.boxSelec}></div>
                 </div>

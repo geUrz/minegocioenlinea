@@ -1,62 +1,164 @@
-.containerHome{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .containerHomebanner{
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  
-  .bannerPc{
+.containerHome {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerHomebanner {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.container{
+  width: 230px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.container h2{
+  font-size: 14px;
+  color: var(--bg2);
+}
+
+.container h1{
+  margin-top: 5px;
+  font-size: 28px;
+  font-family: 'Bebas' !important;
+  color: var(--clrBL0);
+}
+
+.container svg, .container path{
+  font-size: 80px;
+  color: var(--clrBL1);
+  cursor: pointer;
+}
+
+.container div:hover svg, .container:hover path{
+  color: var(--clrBL2) !important;
+}
+
+.container div:active svg, .container:active path{
+  color: var(--clrBL3) !important;
+}
+
+.bannerPc {
+  display: none;
+}
+
+.sectionOne {
+  padding: 80px 10px 30px 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionOne h1 {
+  color: var(--clrBL2);
+  font-size: 30px;
+  font-family: 'Bebas' !important;
+}
+
+.sectionOne svg,
+.sectionOne path {
+  margin-right: 10px;
+  font-size: 30px;
+  color: var(--clrBL2);
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px){
+
+  .bannerMobile {
     display: none;
   }
-  
-  .sectionOne{
-    padding: 80px 10px 30px 10px;
+
+  .bannerPc {
     width: 100%;
     height: auto;
+    display: block;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
-  .sectionOne h1{
-    color: var(--clrBL2);
-    font-size: 30px;
-    font-family: 'Bebas' !important;
+
+  .bannerPc img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container{
+    width: 300px;
+    top: 24%;
+    left: 58%;
   }
   
-  .sectionOne svg, .sectionOne path{
-    margin-right: 10px;
-    font-size: 30px;
-    color: var(--clrBL2);
+  .container h2{
+    font-size: 20px;
+    color: azure;
   }
   
-  
-  @media screen and (min-width: 600px){
-  
-    .bannerMobile{
-      display: none;
-    }
-  
-    .bannerPc{
-      width: 100%;
-      height: auto;
-      display: block;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .bannerPc img{
-      width: 100%;
-      height: auto;
-    }
-  
+  .container h1{
+    margin-top: 10px;
+    font-size: 42px;
+    color: azure;
   }
+  
+  .container svg, .container path{
+    font-size: 100px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .bannerMobile {
+    display: none;
+  }
+
+  .bannerPc {
+    width: 100%;
+    height: auto;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bannerPc img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container{
+    width: 360px;
+    top: 24%;
+    left: 60%;
+  }
+  
+  .container h2{
+    font-size: 26px;
+    color: azure;
+  }
+  
+  .container h1{
+    margin-top: 10px;
+    font-size: 44px;
+    color: azure;
+  }
+  
+  .container svg, .container path{
+    font-size: 140px;
+  }
+
+}

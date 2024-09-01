@@ -7,7 +7,7 @@ export default function Document() {
       <script
             src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
             async
-          ></script>
+      ></script>
       </Head>
       <body>
         <Main />

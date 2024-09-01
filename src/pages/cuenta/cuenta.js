@@ -1,13 +1,12 @@
 import { BasicLayout, BasicModal } from '@/layouts'
 import ProtectedRoute from '@/components/Layout/ProtectedRoute/ProtectedRoute'
-import styles from './cuenta.module.css'
 import { FaEdit, FaUser } from 'react-icons/fa'
-import { Button } from 'semantic-ui-react'
 import { ModUsuarioForm } from '@/components/Cuenta'
 import { useState } from 'react'
 import { Loading, Title, ToastDelete, ToastSuccess } from '@/components/Layout'
 import { useAuth } from '@/contexts/AuthContext'
 import { NegocioById } from '@/components/Negocios'
+import styles from './cuenta.module.css'
 
 export default function Cuenta() {
 

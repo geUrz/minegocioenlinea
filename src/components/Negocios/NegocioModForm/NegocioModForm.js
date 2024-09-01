@@ -91,18 +91,20 @@ export function NegocioModForm(props) {
                 onChange={handleInputChange}
               >
                 <option value=''>-- Seleccionar categoría --</option>
-                <option value='Alimentos'>Alimentos</option>
-                <option value='Belleza'>Belleza</option>
-                <option value='Bienesraices'>Bienes Raíces</option>
-                <option value='EscuelasyCursos'>Escuelas y Cursos</option>
-                <option value='GruposyMusica'>Grupos y Música</option>
-                <option value='Mascotas'>Mascotas</option>
-                <option value='Rentas'>Rentas</option>
-                <option value='SalonesyJardines'>Salones y Jardines</option>
-                <option value='Salud'>Salud</option>
-                <option value='ServiciosProfesionales'>Servicios Profesionales</option>
-                <option value='ServiciosTecnicos'>Servicios Técnicos</option>
-                <option value='Tecnologia'>Tecnología</option>
+                <option value='alimentos'>Alimentos</option>
+                <option value='belleza'>Belleza</option>
+                <option value='bienes-raíces'>Bienes Raíces</option>
+                <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
+                <option value='grupos-y-música'>Grupos y Música</option>
+                <option value='mascotas'>Mascotas</option>
+                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='rentas'>Rentas</option>
+                <option value='salones-y-jardines'>Salones y Jardines</option>
+                <option value='salud'>Salud</option>
+                <option value='servicios-profesionales'>Servicios Profesionales</option>
+                <option value='servicios-técnicos'>Servicios Técnicos</option>
+                <option value='tecnología'>Tecnología</option>
+                <option value='ventasvarias'>Ventas varias</option>
               </FormField>
               {errors.categoriaone && <span className={styles.error}>{errors.categoriaone}</span>}
             </FormField>
@@ -118,18 +120,20 @@ export function NegocioModForm(props) {
                 onChange={handleInputChange}
               >
                 <option value=''>-- Seleccionar categoría --</option>
-                <option value='Alimentos'>Alimentos</option>
-                <option value='Belleza'>Belleza</option>
-                <option value='Bienesraices'>Bienes Raíces</option>
-                <option value='EscuelasyCursos'>Escuelas y Cursos</option>
-                <option value='GruposyMusica'>Grupos y Música</option>
-                <option value='Mascotas'>Mascotas</option>
-                <option value='Rentas'>Rentas</option>
-                <option value='SalonesyJardines'>Salones y Jardines</option>
-                <option value='Salud'>Salud</option>
-                <option value='ServiciosProfesionales'>Servicios Profesionales</option>
-                <option value='ServiciosTecnicos'>Servicios Técnicos</option>
-                <option value='Tecnologia'>Tecnología</option>
+                <option value='alimentos'>Alimentos</option>
+                <option value='belleza'>Belleza</option>
+                <option value='bienes-raíces'>Bienes Raíces</option>
+                <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
+                <option value='grupos-y-música'>Grupos y Música</option>
+                <option value='mascotas'>Mascotas</option>
+                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='rentas'>Rentas</option>
+                <option value='salones-y-jardines'>Salones y Jardines</option>
+                <option value='salud'>Salud</option>
+                <option value='servicios-profesionales'>Servicios Profesionales</option>
+                <option value='servicios-técnicos'>Servicios Técnicos</option>
+                <option value='tecnología'>Tecnología</option>
+                <option value='ventasvarias'>Ventas varias</option>
               </FormField>
             </FormField>
             <FormField>

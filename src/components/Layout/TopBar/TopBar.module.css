@@ -24,6 +24,34 @@
   cursor: pointer;
 }
 
+.iconSearch{
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+} 
+
+.iconSearch svg, .iconSearch path{
+  font-size: 28px;
+  color: azure;
+  cursor: pointer;
+} 
+
+.iconSearch svg:hover, .iconSearch:hover path{
+  color: var(--bg0);
+} 
+
+.searchMain {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(240, 255, 255, .85);
+}
+
 .iconBar{
   margin-right: 20px;
   display: flex;
@@ -31,7 +59,7 @@
   justify-content: center;
 } 
 
-.iconBar svg, .iconBar svg path{
+.iconBar div:nth-child(2) svg, .iconBar div:nth-child(2) path{
   color: azure;
   font-size: 36px;
   cursor: pointer;
@@ -104,7 +132,7 @@
 
 .listaMenuSide svg, .listaMenuSide path{
   margin-right: 5px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -127,7 +155,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
 }
 
 .boxSignOut{
@@ -137,22 +165,64 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: red;
+  background-color: var(--bg4);
   cursor: pointer;
 }
 
 .boxSignOut:hover{
-  background-color: rgb(255, 37, 37);
+  background-color: var(--bg5);
 }
 
 .boxSignOut:active{
-  background-color: rgb(255, 49, 49);
+  background-color: var(--bg6);
 }
 
 .boxSignOut svg, .boxSignOut path{
   color: azure;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px){
+
+  .containerMenuSide{
+    max-width: 320px;
+  }
+
+  .topMenuSide{
+    padding: 45px;
+  }
+
+  .topMenuSide svg, .topMenuSide path{
+    font-size: 60px;
+  }
+  
+  .topMenuSide h1{
+    font-size: 20px;
+  }
+  
+  .topMenuSide h2{
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+
+  .listaMenuSide svg, .listaMenuSide path{
+    font-size: 24px;
+  }
+
+  .listaMenuSide div{
+    font-size: 16.5px;
+  }
+
+  .boxSignOut{
+    width: 50px;
+    height: 50px;
+  }
+
+  .boxSignOut svg, .boxSignOut path{
+    font-size: 24px;
+  }
+
 }
 
 @media screen and (min-width: 1100px){
@@ -162,7 +232,7 @@
   }
 
   .logo{
-    width: 320px;
+    width: 180px;
   }
 
   .logo img{
@@ -171,7 +241,7 @@
   }
 
   .iconUser{
-    padding: 0 10px;
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,28 +254,28 @@
   }
 
   .iconUser svg, .iconUser path{
-    font-size: 16px !important;
+    font-size: 18px !important;
     cursor: pointer;
   }
 
   .iconUser h1{
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
   }
 
   .menu{
+    margin-right: 26px;
     width: 100%;
-    /* max-width: 550px; */
+    max-width: 760px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    display: flex;
   }
   
   .menu a{
-    padding: 0px 10px;
-    font-size: small;
+    margin: 0 15px;
+    font-size: 14px;
     color: azure;
     display: flex;
     flex-direction: column;

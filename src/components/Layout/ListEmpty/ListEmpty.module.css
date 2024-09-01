@@ -1,28 +1,60 @@
-.section{
+.listEmptyMain{
   width: 100%;
-  min-height: 50vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.section div{
+.listEmptyMain div{
   position: relative;
 }
 
-.section svg, .section path{
+.listEmptyMain svg, .listEmptyMain path{
   color: var(--bg5);
 }
 
-.section svg:nth-child(1), .section path:nth-child(1){
+.listEmptyMain svg:nth-child(1), .listEmptyMain path:nth-child(1){
   font-size: 50px;
 }
 
-.section svg:nth-child(2), .section path:nth-child(2){
+.listEmptyMain svg:nth-child(2), .listEmptyMain path:nth-child(2){
   padding: 2px;
   font-size: 28px;
-  background-color: var(--bg1);
+  background-color: azure;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  z-index: 1;
+}
+
+.listEmptyLarge{
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.listEmptyLarge div{
+  position: relative;
+}
+
+.listEmptyLarge svg, .listEmptyLarge path{
+  color: var(--bg5);
+}
+
+.listEmptyLarge svg:nth-child(1), .listEmptyLarge path:nth-child(1){
+  font-size: 50px;
+}
+
+.listEmptyLarge svg:nth-child(2), .listEmptyLarge path:nth-child(2){
+  padding: 2px;
+  font-size: 28px;
+  background-color: azure;
   border-radius: 50%;
   position: absolute;
   top: -5px;

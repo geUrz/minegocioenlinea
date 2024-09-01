@@ -1,26 +1,42 @@
 .iconArrow{
-  padding: 15px;
+  padding: 20px 15px;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: fixed;
-  top: 80px;
-  left: 0px;
   z-index: 100;
-  background-color: rgba(240, 255, 255, .9);
+  background-color: azure;
+}
+
+.iconArrow div{
+  width: 32PX;
+  height: 32PX;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.iconArrow div:hover{
+  background-color: var(--clrGR1);
+}
+
+.iconArrow div:active{
+  background-color: var(--clrGR2);
 }
 
 .iconArrow svg, .iconArrow path{
+  font-size: 28px;
   color: gray;
-  font-size: 22px;
   cursor: pointer;
 }
 
 .iconArrow h1{
-  margin-left: 10px;
+  margin-left: 5px;
   color: gray;
-  font-size: 20px;
-  text-transform: inherit;
+  font-size: 24px;
+  font-family: 'Bebas' !important;
+  text-transform: capitalize;
 }

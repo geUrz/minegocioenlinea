@@ -11,9 +11,11 @@ export function ArrowBack(props) {
   return (
 
     <div className={styles.iconArrow}>
-      <FaChevronLeft
-        onClick={() => router.back()}
-      />
+      <div>
+        <FaChevronLeft
+          onClick={() => router.back()}
+        />
+      </div>
       <h1>{title}</h1>
     </div>
 
