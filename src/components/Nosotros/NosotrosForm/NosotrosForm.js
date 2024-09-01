@@ -1,8 +1,8 @@
 import { Button, Form, FormField, FormGroup, Label, TextArea } from 'semantic-ui-react'
-import styles from './NosotrosForm.module.css'
 import { useState } from 'react'
 import { ToastSuccess } from '@/components/Layout'
 import axios from 'axios'
+import styles from './NosotrosForm.module.css'
 
 export function NosotrosForm() {
 
