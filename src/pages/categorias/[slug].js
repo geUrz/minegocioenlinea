@@ -12,7 +12,10 @@ import { Image } from 'semantic-ui-react'
 
 // Función para limpiar y formatear el slug para el título
 function formatSlugForTitle(slug) {
-  return slug.replace(/-/g, ' ') // Reemplazar guiones medios por espacios
+  if (typeof slug === 'string') {
+    return slug.replace(/-/g, ' '); // Reemplazar guiones medios por espacios
+  }
+  return ''; // Retornar un string vacío si slug no es una cadena
 }
 
 export default function Categoria() {
