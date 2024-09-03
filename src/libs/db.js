@@ -2,10 +2,10 @@ import mysql from 'mysql2/promise'
 
 // Configura la conexión a la base de datos
 const connection = mysql.createPool({
-  host: 'viaduct.proxy.rlwy.net',   
-  port: 27232,   
+  host: 'junction.proxy.rlwy.net',   
+  port: 22709,   
   user: 'root',           
-  password: 'kExpvQRLAnigUHjdEvNouHCWAVDtwGQS',    
+  password: 'QaVxvYyAGSZVoAbfcHTpTQJzBMqBnNtf',    
   database: 'railway',  
   waitForConnections: true,
   connectionLimit: 10,
