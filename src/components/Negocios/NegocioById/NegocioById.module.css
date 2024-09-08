@@ -115,7 +115,7 @@
 
 .iconEditTrash div svg, .iconEditTrash div path, .editImg svg, .editImg path{
   font-size: 20px !important;
-  color: red !important;
+  color: rgb(240, 0, 0) !important;
   cursor: pointer !important;
 }  
 

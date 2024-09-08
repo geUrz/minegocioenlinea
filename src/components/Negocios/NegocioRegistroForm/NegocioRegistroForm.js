@@ -157,7 +157,6 @@ export function NegocioRegistroForm(props) {
           <h2>2. Elige categorías y escribe palabras clave para que encuentren tu negocio fácilmente</h2>
         </div>
 
-        {/* <Form> */}
           <FormGroup widths='equal'>
             <FormField error={!!errors.categoriaone}>
               <Label className={styles.formLabel}>
@@ -170,21 +169,21 @@ export function NegocioRegistroForm(props) {
                 value={categoriaone}
                 onChange={(e) => setCategoriaone(e.target.value)}
               >
-                <option value=''>-- Seleccionar categoría --</option>
+                <option value=''></option>
                 <option value='alimentos'>Alimentos</option>
                 <option value='belleza'>Belleza</option>
                 <option value='bienes-raíces'>Bienes Raíces</option>
                 <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
                 <option value='grupos-y-música'>Grupos y Música</option>
                 <option value='mascotas'>Mascotas</option>
-                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='oficios-varios'>Oficios varios</option>
                 <option value='rentas'>Rentas</option>
                 <option value='salones-y-jardines'>Salones y Jardines</option>
                 <option value='salud'>Salud</option>
                 <option value='servicios-profesionales'>Servicios Profesionales</option>
                 <option value='servicios-técnicos'>Servicios Técnicos</option>
                 <option value='tecnología'>Tecnología</option>
-                <option value='ventasvarias'>Ventas varias</option>
+                <option value='ventas-varias'>Ventas varias</option>
               </FormField>
               {errors.categoriaone && <span className={styles.error}>{errors.categoriaone}</span>}
             </FormField>
@@ -199,21 +198,21 @@ export function NegocioRegistroForm(props) {
                 value={categoriatwo}
                 onChange={(e) => setCategoriatwo(e.target.value)}
               >
-                <option value=''>-- Seleccionar categoría --</option>
+                <option value=''></option>
                 <option value='alimentos'>Alimentos</option>
                 <option value='belleza'>Belleza</option>
                 <option value='bienes-raíces'>Bienes Raíces</option>
                 <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
                 <option value='grupos-y-música'>Grupos y Música</option>
                 <option value='mascotas'>Mascotas</option>
-                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='oficios-varios'>Oficios varios</option>
                 <option value='rentas'>Rentas</option>
                 <option value='salones-y-jardines'>Salones y Jardines</option>
                 <option value='salud'>Salud</option>
                 <option value='servicios-profesionales'>Servicios Profesionales</option>
                 <option value='servicios-técnicos'>Servicios Técnicos</option>
                 <option value='tecnología'>Tecnología</option>
-                <option value='ventasvarias'>Ventas varias</option>
+                <option value='ventas-varias'>Ventas varias</option>
               </FormField>
             </FormField>
             <FormField>
@@ -226,17 +225,14 @@ export function NegocioRegistroForm(props) {
                 placeholder='"Ejemplo: comida, tecnico, ventas, musica, renta, ropa, zapatos, tenis "'
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
-              >
-              </FormTextArea>
+              />
             </FormField>
           </FormGroup>
-        {/* </Form> */}
 
         <div className={styles.steps}>
           <h2>3. Agrega todas las formas de contacto</h2>
         </div>
 
-        {/* <Form> */}
           <FormGroup widths='equal'>
             <FormField>
               <Label className={styles.formLabel}>

@@ -60,7 +60,7 @@ export default async function handler(req, res) {
         if (slug) {
             console.log('Buscando negocio con slug:', slug)
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE slug = ?', [slug]);
+                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE slug = ?', [slug]);
                 if (rows.length === 0) {
                     return res.status(404).json({ error: 'Negocio no encontrado' })
                 }
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
         // Caso para obtener negocios destacados
         if (best === 'true') {
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE best = ?', ['true']);
+                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE best = ?', ['true']);
                 res.status(200).json(rows)
             } catch (error) {
                 res.status(500).json({ error: error.message })
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
         // Caso para obtener negocios por categoría
         if (categoria) {
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE categoriaone = ? OR categoriatwo = ?', [categoria, categoria]);
+                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE categoriaone = ? OR categoriatwo = ?', [categoria, categoria]);
                 res.status(200).json(rows);
             } catch (error) {
                 res.status(500).json({ error: error.message });
@@ -96,7 +96,7 @@ export default async function handler(req, res) {
         // Caso para obtener negocio por usuario_id
         if (usuario_id) {
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE usuario_id = ?', [usuario_id]);
+                const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios WHERE usuario_id = ?', [usuario_id]);
                 if (rows.length === 0) {
                     return res.status(404).json({ error: 'Negocio no encontrado' })
                 }
@@ -109,7 +109,7 @@ export default async function handler(req, res) {
 
         // Caso para obtener todos los negocios
         try {
-            const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios')
+            const [rows] = await connection.query('SELECT id, usuario_id, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug FROM negocios')
             res.status(200).json(rows)
         } catch (error) {
             res.status(500).json({ error: error.message })
@@ -143,44 +143,29 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'ID del negocio es obligatorio' });
         }
 
-        const { image, negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best } = req.body;
+        const { negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best } = req.body;
+        console.log('Datos para actualizar:', { id, negocio, descripcion, categoriaone, categoriatwo, tags });
 
-        if (image) {
-            // Actualización solo de la imagen
-            try {
-                const [result] = await connection.query(
-                    'UPDATE negocios SET image = ? WHERE id = ?',
-                    [image, id]
-                );
-
-                if (result.affectedRows === 0) {
-                    return res.status(404).json({ error: 'Negocio no encontrado' });
-                }
-
-                res.status(200).json({ message: 'Imagen actualizada correctamente' });
-            } catch (error) {
-                res.status(500).json({ error: error.message });
-            }
-        } else if (negocio && categoriaone) {
-            // Actualización completa del negocio
-            try {
+        try {
+            // Actualización de los campos del negocio, sin la imagen
+            if (negocio && categoriaone) {
                 const slug = slugify(negocio, { lower: true, strict: true });
 
                 const [result] = await connection.query(
-                    'UPDATE negocios SET negocio = ?, descripcion = ?, categoriaone = ?, categoriatwo = ?, tags = ?, tel = ?, whatsapp = ?, facebook = ?, email = ?, web = ?, ubicacion = ?, mapa = ?, best = ?, image = ?, slug = ? WHERE id = ?',
-                    [negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, image, slug, id]
+                    'UPDATE negocios SET negocio = ?, descripcion = ?, categoriaone = ?, categoriatwo = ?, tags = ?, tel = ?, whatsapp = ?, facebook = ?, email = ?, web = ?, ubicacion = ?, mapa = ?, best = ?, slug = ? WHERE id = ?',
+                    [negocio, descripcion, categoriaone, categoriatwo, tags, tel, whatsapp, facebook, email, web, ubicacion, mapa, best, slug, id]
                 );
 
                 if (result.affectedRows === 0) {
-                    return res.status(404).json({ error: 'Negocio no encontrado' });
+                    return res.status(404).json({ error: 'Negocio no encontrado para actualizar' });
                 }
 
                 res.status(200).json({ message: 'Negocio actualizado correctamente' });
-            } catch (error) {
-                res.status(500).json({ error: error.message });
+            } else {
+                return res.status(400).json({ error: 'Datos insuficientes para actualizar el negocio' });
             }
-        } else {
-            return res.status(400).json({ error: 'Datos insuficientes para actualizar el negocio' });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
         }
     } else if (req.method === 'DELETE') {
         if (!id) {

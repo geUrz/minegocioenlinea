@@ -58,7 +58,7 @@ export function NegocioUploadImg(props) {
       const imageUrl = res.data.secure_url;
 
       // Ahora actualizamos solo la URL de la imagen en la base de datos
-      await axios.put(`/api/negocios/negocios?id=${negocio.id}`, { image: imageUrl });
+      await axios.put(`/api/negocios/updateImage?id=${negocio.id}`, { image: imageUrl });
 
       setError('')
       onReload()

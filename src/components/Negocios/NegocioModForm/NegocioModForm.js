@@ -74,11 +74,6 @@ export function NegocioModForm(props) {
               >
               </FormTextArea>
             </FormField>
-          </FormGroup>
-        {/* </Form> */}
-
-        {/* <Form> */}
-          <FormGroup widths='equal'>
             <FormField error={!!errors.categoriaone}>
               <Label className={styles.formLabel}>
                 Categoría 1*
@@ -90,21 +85,21 @@ export function NegocioModForm(props) {
                 value={formValues.categoriaone}
                 onChange={handleInputChange}
               >
-                <option value=''>-- Seleccionar categoría --</option>
+                <option value=''></option>
                 <option value='alimentos'>Alimentos</option>
                 <option value='belleza'>Belleza</option>
                 <option value='bienes-raíces'>Bienes Raíces</option>
                 <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
                 <option value='grupos-y-música'>Grupos y Música</option>
                 <option value='mascotas'>Mascotas</option>
-                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='oficios-varios'>Oficios varios</option>
                 <option value='rentas'>Rentas</option>
                 <option value='salones-y-jardines'>Salones y Jardines</option>
                 <option value='salud'>Salud</option>
                 <option value='servicios-profesionales'>Servicios Profesionales</option>
                 <option value='servicios-técnicos'>Servicios Técnicos</option>
                 <option value='tecnología'>Tecnología</option>
-                <option value='ventasvarias'>Ventas varias</option>
+                <option value='ventas-varias'>Ventas varias</option>
               </FormField>
               {errors.categoriaone && <span className={styles.error}>{errors.categoriaone}</span>}
             </FormField>
@@ -119,21 +114,21 @@ export function NegocioModForm(props) {
                 value={formValues.categoriatwo}
                 onChange={handleInputChange}
               >
-                <option value=''>-- Seleccionar categoría --</option>
+                <option value=''></option>
                 <option value='alimentos'>Alimentos</option>
                 <option value='belleza'>Belleza</option>
                 <option value='bienes-raíces'>Bienes Raíces</option>
                 <option value='escuelas-y-cursos'>Escuelas y Cursos</option>
                 <option value='grupos-y-música'>Grupos y Música</option>
                 <option value='mascotas'>Mascotas</option>
-                <option value='oficiosvarios'>Oficios varios</option>
+                <option value='oficios-varios'>Oficios varios</option>
                 <option value='rentas'>Rentas</option>
                 <option value='salones-y-jardines'>Salones y Jardines</option>
                 <option value='salud'>Salud</option>
                 <option value='servicios-profesionales'>Servicios Profesionales</option>
                 <option value='servicios-técnicos'>Servicios Técnicos</option>
                 <option value='tecnología'>Tecnología</option>
-                <option value='ventasvarias'>Ventas varias</option>
+                <option value='ventas-varias'>Ventas varias</option>
               </FormField>
             </FormField>
             <FormField>
@@ -146,14 +141,8 @@ export function NegocioModForm(props) {
                 placeholder='"Ejemplo: comida, tecnico, ventas, musica, renta, ropa, zapatos, tenis "'
                 value={formValues.tags}
                 onChange={handleInputChange}
-              >
-              </FormTextArea>
+              />
             </FormField>
-          </FormGroup>
-        {/* </Form> */}
-
-        {/* <Form> */}
-          <FormGroup widths='equal'>
             <FormField>
               <Label className={styles.formLabel}>
                 Teléfono (opcional)

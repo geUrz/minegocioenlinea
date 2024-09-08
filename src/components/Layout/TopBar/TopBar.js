@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useAuth } from '@/contexts/AuthContext'
 import Link from 'next/link'
 import { Image } from 'semantic-ui-react'
-import { FaBars, FaCloudUploadAlt, FaHandHoldingUsd, FaHome,  FaQuestionCircle, FaSearch, FaSignOutAlt, FaTimes,FaUser, FaUserCircle, FaLayerGroup } from 'react-icons/fa'
+import { FaBars, FaCloudUploadAlt, FaHandHoldingUsd, FaHome,  FaQuestionCircle, FaSearch, FaSignOutAlt, FaTimes,FaUser, FaUserCircle, FaLayerGroup, FaStoreAlt } from 'react-icons/fa'
 import styles from './TopBar.module.css'
 import { SearchNegocios } from '../SearchNegocios'
 import { NegocioList } from '../NegocioList/NegocioList.js'
@@ -12,7 +12,7 @@ import { NegocioList } from '../NegocioList/NegocioList.js'
 export function TopBar() {
 
   const { user, logout } = useAuth()
-
+  
   const [search, setSearch] = useState(false)
 
   const onOpenCloseSearch = () => setSearch((prevState) => !prevState)
@@ -155,6 +155,21 @@ export function TopBar() {
                 ¡ Quiero donar !
               </div>
             </Link>
+
+            {!user ? (
+              ''
+            ) : (
+              user.usuario === 'admin' || user.usuario === 'gera' ? (
+                <Link href='/negocios'>
+              <div onClick={menuOpen}>
+                <FaStoreAlt />
+              </div>
+            </Link>
+              ) : (
+                ''
+              )
+            )}
+
           </div>
 
           {!user ? (

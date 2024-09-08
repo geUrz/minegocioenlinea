@@ -7,7 +7,7 @@ import { Confirm } from '@/components/Layout'
 import { BasicModal } from '@/layouts'
 import { NegocioModForm } from '../NegocioModForm'
 import styles from './NegocioById.module.css'
-import { Button, Image} from 'semantic-ui-react'
+import { Button, Image } from 'semantic-ui-react'
 import { NegocioUploadImg } from '../NegocioUploadImg'
 
 export function NegocioById(props) {
@@ -24,11 +24,13 @@ export function NegocioById(props) {
   const [showModForm, setShowModForm] = useState(false)
   const [showSubirImg, setShowSubirImg] = useState(false)
   const [showCambiarImg, setShowCambiarImg] = useState(false)
+  const [showConfirmDelImg, setShowConfirmDelImg] = useState(false)
 
   const onShowConfirm = () => setShowConfirm((prevState) => !prevState)
   const onShowModForm = () => setShowModForm((prevState) => !prevState)
   const onShowSubirImg = () => setShowSubirImg((prevState) => !prevState)
   const onShowCambiarImg = () => setShowCambiarImg((prevState) => !prevState)
+  const onShowConfirmDelImg = () => setShowConfirmDelImg((prevState) => !prevState)
 
   useEffect(() => {
     (async () => {
@@ -53,13 +55,14 @@ export function NegocioById(props) {
   const updateNegocio = async () => {
     try {
       const response = await axios.put(`/api/negocios/negocios?id=${negocio.id}`, formValues);
-      const updatedNegocio = { ...formValues, slug: response.data.slug }; // Asegúrate de incluir el slug en el estado actualizado
-      setNegocio(updatedNegocio); // Actualiza el estado con el negocio modificado
+      const updatedNegocio = { ...formValues, slug: response.data }
+      setNegocio(updatedNegocio);  // Actualiza el estado local
       onShowModForm();  // Cierra el modal
     } catch (error) {
       console.error('Error al actualizar el negocio:', error);
     }
-  };
+  }
+
 
   const delNegocio = async () => {
     try {
@@ -78,8 +81,8 @@ export function NegocioById(props) {
       setNegocio({
         ...negocio,
         image: null, // Actualiza el estado local para reflejar la eliminación
-      });
-      console.log('Imagen eliminada correctamente');
+      })
+      onShowConfirmDelImg()
     } catch (error) {
       console.error('Error al eliminar la imagen:', error);
     }
@@ -122,7 +125,7 @@ export function NegocioById(props) {
                   Cambiar imagen
                 </Button>
               )}
-              <FaTrash onClick={deleteImage} />
+              <FaTrash onClick={onShowConfirmDelImg} />
             </div>
 
             <h1>{negocio.negocio}</h1>
@@ -254,6 +257,23 @@ export function NegocioById(props) {
         onConfirm={delNegocio}
         onCancel={onShowConfirm}
         content='¿Estás seguro de eliminar el negocio?'
+      />
+
+      <Confirm
+        open={showConfirmDelImg}
+        cancelButton={
+          <div className={styles.iconClose}>
+            <FaTimes />
+          </div>
+        }
+        confirmButton={
+          <div className={styles.iconCheck}>
+            <FaCheck />
+          </div>
+        }
+        onConfirm={deleteImage}
+        onCancel={onShowConfirmDelImg}
+        content='¿Estás seguro de eliminar la imagen?'
       />
 
     </>
