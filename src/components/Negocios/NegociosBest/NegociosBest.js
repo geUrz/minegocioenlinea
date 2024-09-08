@@ -3,7 +3,8 @@ import styles from './NegociosBest.module.css'
 import axios from 'axios'
 import { ListEmpty, Loading } from '@/components/Layout'
 import { map, size } from 'lodash'
-import { FaRegImage } from 'react-icons/fa'
+import { FaRegImage, FaStoreAlt } from 'react-icons/fa'
+import Link from 'next/link'
 
 export function NegociosBest() {
 
@@ -33,16 +34,16 @@ export function NegociosBest() {
           <div className={styles.boxMain}>
 
             {map(negocios, (negocio) => (
-              <div key={negocio.id} className={styles.boxSection}>
+              <Link href={`/negocio/${negocio.slug}`} key={negocio.id} className={styles.boxSection}>
 
                 <div className={styles.box}>
-                {!negocio.image ? (
+                  {!negocio.image ? (
                     <div className={styles.noImage}>
                       <FaStoreAlt />
                     </div>
-                    ) : (
-                      <Image src={negocio.image} />
-                    )
+                  ) : (
+                    <Image src={negocio.image} />
+                  )
                   }
                   <div className={styles.boxSelec}></div>
                 </div>
@@ -50,7 +51,7 @@ export function NegociosBest() {
                   <h1>{negocio.negocio}</h1>
                 </div>
 
-              </div>
+              </Link>
             ))}
 
           </div>

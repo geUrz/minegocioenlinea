@@ -1,17 +1,25 @@
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { BasicLayout } from '@/layouts'
+import { BasicLayout, BasicModal } from '@/layouts'
 import { Loading } from '@/components/Layout'
 import styles from './slug.module.css'
-import { FaAddressCard, FaEnvelope, FaFacebook, FaGlobe, FaImage, FaMapMarkerAlt, FaMobileAlt, FaWhatsapp } from 'react-icons/fa'
+import { FaAddressCard, FaEdit, FaEnvelope, FaFacebook, FaGlobe, FaMapMarkerAlt, FaMobileAlt, FaStoreAlt, FaWhatsapp } from 'react-icons/fa'
 import Link from 'next/link'
 import { ArrowBack } from '@/components/Layout/ArrowBack'
 import { Image } from 'semantic-ui-react'
+import { useAuth } from '@/contexts/AuthContext'
+import { NegocioBestForm } from '@/components/Negocios'
 
 export default function Negocio() {
+
+  const {user} = useAuth()
   const router = useRouter()
   const { slug } = router.query
+
+  const [show, setShow] = useState(false)
+
+  const onOpenClose = () => setShow((prevState) => !prevState)
 
   const [negocio, setNegocio] = useState(null)
 
@@ -40,7 +48,7 @@ export default function Negocio() {
         <div className={styles.section}>
           <div className={styles.img}>
             {!negocio.image ? (
-              <FaImage />
+              <FaStoreAlt />
             ) : (
               <Image src={negocio.image} />
             )}
@@ -128,6 +136,22 @@ export default function Negocio() {
           </div>
         </div>
       </div>
+
+      {!user ? (
+        ''
+      ) : (
+        user.usuario === 'admin' || user.usuario === 'gera' ? (
+          <div className={styles.iconEdit}>
+            <FaEdit onClick={onOpenClose} />
+          </div>
+        ) : (
+          ''
+        )
+      )}
+
+      <BasicModal title='mejor negocio' show={show} onClose={onOpenClose}>
+        <NegocioBestForm negocioId={negocio.id} onOpenClose={onOpenClose} />
+      </BasicModal>
 
     </BasicLayout>
 

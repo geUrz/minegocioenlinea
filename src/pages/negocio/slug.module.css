@@ -95,6 +95,29 @@
   cursor: pointer;
 }
 
+.iconEdit{
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconEdit svg, .iconEdit path{
+  font-size: 28px;
+  color: var(--clrBL0);
+  cursor: pointer;
+}
+
+.iconEdit svg:hover, .iconEdit path:hover{
+  color: var(--clrBL1);
+}
+
+.iconEdit svg:active, .iconEdit path:active{
+  color: var(--clrBL2);
+}
+
 @media screen and (min-width: 768px){
 
   .section{
