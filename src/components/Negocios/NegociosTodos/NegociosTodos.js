@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react"
 import { ListEmpty, Loading } from "@/components/Layout"
 import { map, size } from "lodash"
-import styles from './NegociosTodos.module.css'
 import axios from "axios"
 import Link from "next/link"
 import { Image } from "semantic-ui-react"
 import { FaStoreAlt } from "react-icons/fa"
+import styles from './NegociosTodos.module.css'
 
-export function NegociosTodos(props) {
-
-  const { reload, onReload } = props
+export function NegociosTodos() {
 
   const [negocios, setNegocios] = useState()
 
@@ -22,7 +20,7 @@ export function NegociosTodos(props) {
         console.error(error)
       }
     })()
-  }, [reload])
+  }, [])
 
   return (
 

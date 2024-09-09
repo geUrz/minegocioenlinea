@@ -1,10 +1,8 @@
 import { BasicLayout } from "@/layouts"
 import { Image } from "semantic-ui-react"
 import { NegociosTodos, NegociosBest } from "@/components/Negocios"
-import { PublicarNegocio } from "@/components/Home"
 import styles from './home.module.css'
-import { FaCloudUploadAlt, FaMedal, FaStore, FaStoreAlt } from "react-icons/fa"
-import { ToastSuccess } from "@/components/Layout"
+import { FaCloudUploadAlt, FaMedal, FaStoreAlt } from "react-icons/fa"
 import { useRouter } from "next/router"
 
 

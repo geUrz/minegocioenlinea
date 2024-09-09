@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import styles from './NegociosBest.module.css'
 import axios from 'axios'
 import { ListEmpty, Loading } from '@/components/Layout'
 import { map, size } from 'lodash'
-import { FaRegImage, FaStoreAlt } from 'react-icons/fa'
+import { FaStoreAlt } from 'react-icons/fa'
 import Link from 'next/link'
+import { Image } from 'semantic-ui-react'
+import styles from './NegociosBest.module.css'
 
 export function NegociosBest() {
 
