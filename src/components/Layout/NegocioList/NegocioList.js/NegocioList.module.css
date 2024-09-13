@@ -61,10 +61,16 @@
   cursor: pointer;
 }
 
+.box img{
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
 .title{
-  padding: 0 2px;
+  padding: 0 2.5px;
   margin-top: 4px;
-  width: 100%;
+  width: 150px;
   height: auto;
   display: flex;
   align-items: center;
@@ -74,8 +80,10 @@
 
 .title h1{
   font-size: 14px;
-  color: black;
   font-weight: 600 !important;
+  text-align: center;
+  word-break: break-all;
+  color: black;
   cursor: pointer;
 }
 

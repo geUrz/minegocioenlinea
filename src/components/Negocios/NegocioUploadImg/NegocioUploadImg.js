@@ -14,7 +14,7 @@ export function NegocioUploadImg(props) {
   const [error, setError] = useState('')
 
   const acceptedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-  const maxSize = 1 * 150 * 150
+  const maxSize = 1 * 1500 * 1500
 
   const handleImageSelect = (e) => {
     const file = e.target.files[0]; // Obtener el archivo seleccionado
@@ -117,7 +117,6 @@ export function NegocioUploadImg(props) {
               />
               <span>{fileName}</span>
               {error && <Message negative>{error}</Message>}
-              <h1>Tamaño: alto 150px - ancho 150px</h1>
               <h1>Formatos: png, jpg y webp</h1>
               <Button onClick={handleImageUpload} secondary disabled={!selectedImage}>
                 Subir Imagen

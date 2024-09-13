@@ -86,11 +86,7 @@ export function NegocioById(props) {
     } catch (error) {
       console.error('Error al eliminar la imagen:', error);
     }
-  };
-
-
-
-
+  }
 
   return (
 

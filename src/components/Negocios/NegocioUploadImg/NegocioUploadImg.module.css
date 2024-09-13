@@ -27,10 +27,6 @@
   color: var(--clrGR0);
 }
 
-.main h1:nth-child(4){
-  margin-top: 10px !important;
-}
-
 .main span{
   color: var(--clrBL0);
 }
