@@ -51,7 +51,7 @@ export function NegocioUploadImg(props) {
 
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'minegocioenlinea-preset'); // Reemplaza con tu upload preset de Cloudinary
+    formData.append('upload_preset', 'minegocioenlinea'); // Reemplaza con tu upload preset de Cloudinary
 
     try {
       const res = await axios.post('https://api.cloudinary.com/v1_1/dwi6j5wmy/image/upload', formData); // Reemplaza con tu cloud name
